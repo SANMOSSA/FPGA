@@ -17,7 +17,7 @@ module VGADrawer(
 
     logic [10:0] TimeCountH = 0;   // Contador para el tiempo horizontal.
     logic [10:0] TimeCountV = 0;   // Contador para el tiempo vertical.
-    parameter HTime = 794, TimeHa = 95, TimeHb = 48, TimeHc = 634;  // Parámetros para el tiempo horizontal.
+    parameter HTime = 794, TimeHa = 95, TimeHb = 48, TimeHc = 635;  // Parámetros para el tiempo horizontal.
     parameter VTime = 523, TimeVa = 2, TimeVb = 32, TimeVc = 479;   // Parámetros para el tiempo vertical.
 
     initial VGA_Clk = 0;    // Inicializa la señal de reloj para el VGA en 0.
@@ -30,7 +30,7 @@ module VGADrawer(
         if (TimeCountV > (VTime - 1)) begin   // Si el contador de tiempo vertical es mayor que VTime - 1.
             TimeCountV = 0;                   // Reinicia el contador.
         end
-        if (TimeCountH == (HTime - 1)) begin   // Si el contador de tiempo horizontal es igual a HTime - 1.
+        if (TimeCountH > (HTime - 1)) begin   // Si el contador de tiempo horizontal es igual a HTime - 1.
             TimeCountH = 0;                   // Reinicia el contador de tiempo horizontal.
             TimeCountV = TimeCountV + 1;       // Incrementa el contador de tiempo vertical.
         end
@@ -68,9 +68,9 @@ module VGADrawer(
             end
             else begin
                 // Dibuja el interior del cuadrado
-                VGA_PixelR = {8{Pixel}};   // Asigna el valor del color rojo del pixel.
-                VGA_PixelG = {8{Pixel}};   // Asigna el valor del color verde del pixel.
-                VGA_PixelB = {8{Pixel}};   // Asigna el valor del color azul del pixel.
+                VGA_PixelR = {8{Pixel}};   // Asigna el valor del color rojo del pixel. 111111111
+                VGA_PixelG = {8{Pixel}};   // Asigna el valor del color verde del pixel.111111111
+                VGA_PixelB = {8{Pixel}};   // Asigna el valor del color azul del pixel.111111111
             end
 
         end
