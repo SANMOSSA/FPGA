@@ -1,14 +1,16 @@
 module VGATopLevel(
     input logic Clk,            // Señal de reloj del sistema.
-    input logic Region,      // Selecciona la región de la pantalla que va a modificar
-    input logic Letra,       // Selecciona la letra a mostrar
+    input logic  Letra1,
+    input logic  Letra2,
+    input logic  Letra3,
+    input logic  Letra4,
     output logic [7:0] VGA_PixelR,  // Color Rojo del pixel a mostrar.
     output logic [7:0] VGA_PixelG,  // Color Verde del pixel a mostrar.
     output logic [7:0] VGA_PixelB,  // Color Azul del pixel a mostrar.
     output logic VGA_Clk,       // Señal de reloj para el VGA.
     output logic VGA_sync,      // Señal de sincronización para el VGA.
     output logic VGA_blank,     // Señal para borrar la pantalla del VGA.
-    output logic Hsync,         // Señal de sincronización horizontal para el VGA.
+    output logic Hsync,         // Saeñal de sincronización horizontal para el VGA.
     output logic Vsync          // Señal de sincronización vertical para el VGA.
 
 );
@@ -36,12 +38,7 @@ module VGATopLevel(
             TimeCountH = TimeCountH + 1;       // Si no, incrementa el contador de tiempo horizontal.
         end
     end
-    VRAMReader instanciaVRAM(.Fila(TimeCountV), .Columna(TimeCountH), .Pixel(Pixel), .Region(Region), .Letra(Letra));   // Instancia el módulo VRAM.
+    VRAMReader instanciaVRAM(.Fila(TimeCountV), .Columna(TimeCountH), .Pixel(Pixel), .Letra1(Letra1), .Letra2(Letra2), .Letra3(Letra3), .Letra4(Letra4));   // Instancia el módulo VRAMReader.
     VGADrawer instanciaVGADrawer(.Clk(Clk), .Pixel(Pixel), .VGA_PixelR(VGA_PixelR), .VGA_PixelG(VGA_PixelG), .VGA_PixelB(VGA_PixelB), .VGA_Clk(VGA_Clk), .VGA_sync(VGA_sync), .VGA_blank(VGA_blank), .Hsync(Hsync), .Vsync(Vsync));   // Instancia el módulo VGADrawer.
 
 endmodule
-
-// Push-button[0] PIN_AA14
-// Push-button[1] PIN_AA15
-// Push-button[2] PIN_W15
-// Push-button[3] PIN_Y16

@@ -1,13 +1,14 @@
-module VRAMReader(Fila,Columna,Pixel,Region,Letra);
-    input logic Region;      // Selecciona la región de la pantalla que va a modificar 4 regiones
-    input logic Letra;       // Selecciona la letra a mostrar
+module VRAMReader(Fila,Columna,Pixel,Letra1,Letra2,Letra3,Letra4);
+    input logic  Letra1,Letra2,Letra3,Letra4;
 	input  logic [10:0] Fila; // Pocion en la memoria de video en la fila, tamaño maximo de 2^11 = 2048
 	input  logic [10:0] Columna; // Pocion en la memoria de video en la columna, tamaño maximo de 2^11 = 2048
 	output logic Pixel;
 	
 	
-	logic [3:0]SelectorLetra = 0;
-	logic [1:0]SelectorRegion = 0;
+	logic [3:0]SelectorLetra1 = 0; // Contador para seleccionar la letra 1
+	logic [3:0]SelectorLetra2 = 0; // Contador para seleccionar la letra 2
+	logic [3:0]SelectorLetra3 = 0; // Contador para seleccionar la letra 3
+	logic [3:0]SelectorLetra4 = 0; // Contador para seleccionar la letra 4
 	
 	parameter HTime = 794, VTime = 523, FontHTime = 150 ;
 
@@ -19,27 +20,34 @@ module VRAMReader(Fila,Columna,Pixel,Region,Letra);
 
 	
 
-	always @(negedge Letra)
+	always @(negedge Letra1)
 	begin
-		SelectorLetra <= SelectorLetra + 1;
-		if (SelectorLetra == 16)
-			SelectorLetra <= 0;
+		SelectorLetra1 <= SelectorLetra1 + 1;
+		if (SelectorLetra1 == 16)
+			SelectorLetra1 <= 0;
 	end
 
-	always @(negedge Region)
+	always @(negedge Letra2)
 	begin
-		SelectorRegion <= SelectorRegion + 1;
-		if (SelectorRegion == 4)
-			SelectorRegion <= 0;
+		SelectorLetra2 <= SelectorLetra2 + 1;
+		if (SelectorLetra2 == 16)
+			SelectorLetra2 <= 0;
 	end
-	
-	// always_comb
-	// begin
-		
-		
-			
-	// end
-	
+
+	always @(negedge Letra3)
+	begin
+		SelectorLetra3 <= SelectorLetra3 + 1;
+		if (SelectorLetra3 == 16)
+			SelectorLetra3 <= 0;
+	end
+
+	always @(negedge Letra4)
+	begin
+		SelectorLetra4 <= SelectorLetra4 + 1;
+		if (SelectorLetra4 == 16)
+			SelectorLetra4 <= 0;
+	end
+
 	always_comb
 	begin
 		$readmemb("0.txt",MemRegion0);
@@ -47,10 +55,7 @@ module VRAMReader(Fila,Columna,Pixel,Region,Letra);
 		$readmemb("2.txt",MemRegion2);
 		$readmemb("3.txt",MemRegion3);
 
-		
-		case (SelectorRegion)
-			0: begin
-				case (SelectorLetra)
+		case (SelectorLetra1)
 					0: $readmemb("0.txt",MemRegion0) ;
 					1: $readmemb("1.txt",MemRegion0) ;
 					2: $readmemb("2.txt",MemRegion0) ;
@@ -68,10 +73,8 @@ module VRAMReader(Fila,Columna,Pixel,Region,Letra);
 					14: $readmemb("E.txt",MemRegion0) ;
 					15: $readmemb("F.txt",MemRegion0) ;
 					default: $readmemb("0.txt",MemRegion0) ; 
-				endcase
-				end
-			1: begin
-				case (SelectorLetra)
+		endcase
+		case (SelectorLetra2)
 					0: $readmemb("0.txt",MemRegion1) ;
 					1: $readmemb("1.txt",MemRegion1) ;
 					2: $readmemb("2.txt",MemRegion1) ;
@@ -89,10 +92,8 @@ module VRAMReader(Fila,Columna,Pixel,Region,Letra);
 					14: $readmemb("E.txt",MemRegion1) ;
 					15: $readmemb("F.txt",MemRegion1) ;
 					default: $readmemb("0.txt",MemRegion1) ; 
-				endcase
-				end
-			2: begin
-				case (SelectorLetra)
+		endcase
+		case (SelectorLetra3)
 					0: $readmemb("0.txt",MemRegion2) ;
 					1: $readmemb("1.txt",MemRegion2) ;
 					2: $readmemb("2.txt",MemRegion2) ;
@@ -110,10 +111,8 @@ module VRAMReader(Fila,Columna,Pixel,Region,Letra);
 					14: $readmemb("E.txt",MemRegion2) ;
 					15: $readmemb("F.txt",MemRegion2) ;
 					default: $readmemb("0.txt",MemRegion2) ; 
-				endcase
-				end
-			3: begin
-				case (SelectorLetra)
+		endcase
+		case (SelectorLetra4)
 					0: $readmemb("0.txt",MemRegion3) ;
 					1: $readmemb("1.txt",MemRegion3) ;
 					2: $readmemb("2.txt",MemRegion3) ;
@@ -131,16 +130,8 @@ module VRAMReader(Fila,Columna,Pixel,Region,Letra);
 					14: $readmemb("E.txt",MemRegion3) ;
 					15: $readmemb("F.txt",MemRegion3) ;
 					default: $readmemb("0.txt",MemRegion3) ; 
-				endcase
-				end
-			default: begin
-						$readmemb("0.txt",MemRegion0);
-						$readmemb("1.txt",MemRegion1);
-						$readmemb("2.txt",MemRegion2);
-						$readmemb("3.txt",MemRegion3);
-
-					end
 		endcase
+		
 
 		// si la Columna esta entre 150 y 300 entonces se selecciona la region 0
 		// si la Columna esta entre 300 y 450 entonces se selecciona la region 1

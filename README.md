@@ -160,8 +160,10 @@ Esta VGA recibe como entrada 1 reloj de 50 Mhz, y dos pulsadores el **el pin pla
 Pines basicos para el funcionamiento de la VGA
 ```
 Clk         = PIN_AF14    Reloj de la FPGA
-Region      = PIN_AA14    Pulsador de la FPGA para cambiar de region
-Letra       = PIN_AA15    Pulsador de la FPGA para cambiar de letra
+Letra4      = PIN_AA14    Letra 4
+Letra3      = PIN_AA15    Letra 3
+Letra2      = PIN_W15     Letra 2
+Letra1      = PIN_Y16     Letra 1
 VGA_Clk     = PIN_A11     Reloj del VGA 3.3LV
 VGA_sync    = PIN_C10     Sincronizacion del VGA
 VGA_blank   = PIN_F10     lIMPIZA DE LA PANTALLA
