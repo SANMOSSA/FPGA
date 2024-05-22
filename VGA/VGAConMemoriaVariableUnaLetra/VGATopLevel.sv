@@ -1,6 +1,5 @@
 module VGATopLevel(
     input logic Clk,            // Señal de reloj del sistema.
-    input logic [3:0] FileSW,   // Selector de archivo para la memoria de video.
     input logic Pulsador,      // Selector de archivo 
     output logic [7:0] VGA_PixelR,  // Color Rojo del pixel a mostrar.
     output logic [7:0] VGA_PixelG,  // Color Verde del pixel a mostrar.
