@@ -1,7 +1,7 @@
 module VGATopLevel(
     input logic Clk,            // Señal de reloj del sistema.
-    input logic [3:0] FileSW,   // Selector de archivo para la memoria de video.
-    input logic Pulsador,      // Selector de archivo 
+    input logic Region,      // Selecciona la región de la pantalla que va a modificar
+    input logic Letra,       // Selecciona la letra a mostrar
     output logic [7:0] VGA_PixelR,  // Color Rojo del pixel a mostrar.
     output logic [7:0] VGA_PixelG,  // Color Verde del pixel a mostrar.
     output logic [7:0] VGA_PixelB,  // Color Azul del pixel a mostrar.
@@ -36,7 +36,7 @@ module VGATopLevel(
             TimeCountH = TimeCountH + 1;       // Si no, incrementa el contador de tiempo horizontal.
         end
     end
-    VRAMReader instanciaVRAM(.Fila(TimeCountV), .Columna(TimeCountH), .Pixel(Pixel), .Pulsador(Pulsador));   // Instancia el módulo VRAM.
+    VRAMReader instanciaVRAM(.Fila(TimeCountV), .Columna(TimeCountH), .Pixel(Pixel), .Region(Region), .Letra(Letra));   // Instancia el módulo VRAM.
     VGADrawer instanciaVGADrawer(.Clk(Clk), .Pixel(Pixel), .VGA_PixelR(VGA_PixelR), .VGA_PixelG(VGA_PixelG), .VGA_PixelB(VGA_PixelB), .VGA_Clk(VGA_Clk), .VGA_sync(VGA_sync), .VGA_blank(VGA_blank), .Hsync(Hsync), .Vsync(Vsync));   // Instancia el módulo VGADrawer.
 
 endmodule
