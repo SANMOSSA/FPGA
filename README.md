@@ -10,7 +10,7 @@ Varios codios en system verilog, para ser desplegados en un FPGA DE1-Soc
 
 ## VGA
 ### VGA Simple
-Esta VGA recibe como entrada 1 reloj de 50 Mhz y SW, el **el pin planer para ella es el sisguiente**:
+Esta VGA recibe como entrada 1 reloj de 50 Mhz y SW,  **el pin planer para ella es el sisguiente**:
 
 > TODOS A 3.3LVTTL
 
@@ -58,7 +58,7 @@ VGA_PixelB[6] = PIN_G15
 VGA_PixelB[7] = PIN_J14
 ```
 ### VGA Con Memoria Fija
-Esta VGA recibe como entrada 1 reloj de 50 Mhz, el **el pin planer para ella es el sisguiente**:
+Esta VGA recibe como entrada 1 reloj de 50 Mhz,  **el pin planer para ella es el sisguiente**:
 
 > TODOS A 3.3LVTTL
 
@@ -105,7 +105,7 @@ VGA_PixelB[6] = PIN_G15
 VGA_PixelB[7] = PIN_J14
 ```
 ### VGA Con Memoria Variable (Una Letra)
-Esta VGA recibe como entrada 1 reloj de 50 Mhz, el **el pin planer para ella es el sisguiente**:
+Esta VGA recibe como entrada 1 reloj de 50 Mhz,  **el pin planer para ella es el sisguiente**:
 
 > TODOS A 3.3LVTTL
 
@@ -153,7 +153,7 @@ VGA_PixelB[6] = PIN_G15
 VGA_PixelB[7] = PIN_J14
 ```
 ### VGA Con Memoria Variable
-Esta VGA recibe como entrada 1 reloj de 50 Mhz, y dos pulsadores el **el pin planer para ella es el sisguiente**:
+Esta VGA recibe como entrada 1 reloj de 50 Mhz, y 4 pulsadores  **el pin planer para ella es el sisguiente**:
 
 > TODOS A 3.3LVTTL
 
