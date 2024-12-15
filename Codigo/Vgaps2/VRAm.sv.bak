@@ -1,0 +1,11 @@
+module VRAm(Fila,Columna,Pixel);
+  input  logic [10:0] Fila;
+  input  logic [10:0] Columna;
+  output logic [23:0] Pixel;
+  
+  reg [800-1:0][525-1:0] mem = 420000'h1 ;
+  always_comb
+   begin
+      Pixel <= mem[Fila][Columna];	
+   end
+endmodule

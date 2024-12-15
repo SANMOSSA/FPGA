@@ -1,0 +1,16 @@
+# system info reloj on 2022.11.20.18:33:18
+system_info:
+name,value
+DEVICE,5CSEMA5F31C6
+DEVICE_FAMILY,Cyclone V
+GENERATION_ID,1668987197
+#
+#
+# Files generated for reloj on 2022.11.20.18:33:18
+files:
+filepath,kind,attributes,module,is_top
+simulation/reloj.v,VERILOG,,reloj,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module

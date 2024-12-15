@@ -1,0 +1,161 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "VGA_Pixel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[2]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[3]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[4]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[5]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[6]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[7]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[8]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[9]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[10]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[11]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[12]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[13]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[14]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[15]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[16]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[17]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[18]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[19]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[20]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[21]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[22]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Pixel[23]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_Clk",
+					"strict" : false
+				},
+				{
+					"name" : "Hsync",
+					"strict" : false
+				},
+				{
+					"name" : "Vsync",
+					"strict" : false
+				},
+				{
+					"name" : "leds[0]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[1]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[2]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[3]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[4]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[5]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[6]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Clk",
+					"strict" : false
+				},
+				{
+					"name" : "clkps",
+					"strict" : false
+				},
+				{
+					"name" : "Rx",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

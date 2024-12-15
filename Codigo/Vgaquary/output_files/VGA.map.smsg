@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at VGA.sv(17): always construct contains both blocking and non-blocking assignments File: U:/trabajos/Quartus/VGA/VGA.sv Line: 17
+Warning (10268): Verilog HDL information at PuenteVRAM_VGA.sv(26): always construct contains both blocking and non-blocking assignments File: U:/trabajos/Quartus/VGA/PuenteVRAM_VGA.sv Line: 26

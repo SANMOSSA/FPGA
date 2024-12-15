@@ -1,0 +1,51 @@
+Info: Starting: Create simulation model
+Info: qsys-generate U:\trabajos\Quartus\VGA\reloj.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=U:\trabajos\Quartus\VGA\reloj\simulation --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading VGA/reloj.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 22.1]
+Progress: Parameterizing module clk_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: reloj: Generating reloj "reloj" for SIM_VERILOG
+Info: reloj: Done "reloj" with 1 modules, 1 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=U:\trabajos\Quartus\VGA\reloj\reloj.spd --output-directory=U:/trabajos/Quartus/VGA/reloj/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=U:\trabajos\Quartus\VGA\reloj\reloj.spd --output-directory=U:/trabajos/Quartus/VGA/reloj/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in U:/trabajos/Quartus/VGA/reloj/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for RIVIERA simulator in U:/trabajos/Quartus/VGA/reloj/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under U:/trabajos/Quartus/VGA/reloj/simulation/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate U:\trabajos\Quartus\VGA\reloj.qsys --block-symbol-file --output-directory=U:\trabajos\Quartus\VGA\reloj --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading VGA/reloj.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 22.1]
+Progress: Parameterizing module clk_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate U:\trabajos\Quartus\VGA\reloj.qsys --synthesis=VERILOG --output-directory=U:\trabajos\Quartus\VGA\reloj\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading VGA/reloj.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 22.1]
+Progress: Parameterizing module clk_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: reloj: Generating reloj "reloj" for QUARTUS_SYNTH
+Info: reloj: Done "reloj" with 1 modules, 1 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

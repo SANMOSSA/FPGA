@@ -1,0 +1,21 @@
+module DivisorFre(
+input clk, 
+output reg clk_out);
+
+parameter frecuencia = 50000000;
+parameter freq_out= 25000000;
+parameter max_count=frecuencia/(2*freq_out);
+reg [24:0] count; 
+initial 
+begin
+	count = 0;
+	clk_out=0;
+end
+
+always @(posedge clk) 
+begin
+	if (count==(max_count))
+		begin 
+		clk out =-clk out; 
+		end
+end

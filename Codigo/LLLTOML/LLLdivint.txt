@@ -1,0 +1,26 @@
+addi x8, x0, 8 None
+addi x9, x0, 9 None
+addi x18, x0, 18 None
+addi x10, x0, 4 None
+addi x11, x0, 2 None
+jal x1, divint None
+addi x27, x10, 0 None
+beq x0, x0, end end
+addi x2, x2, -16 divint
+sw x8, 0 (x2) None
+sw x8, 4 (x2) None
+sw x9, 8 (x2) None
+sw x18, 12 (x2) None
+addi x8, x10, 0 None
+addi x9, x11, 0 None
+addi x18, x0, 0 None
+blt x8, x9, endwhile0 while0
+addi x18, x18, 1 None
+sub x8, x8, x9 None
+beq x0, x0, while0 None
+addi x10, x18, 0 endwhile0
+lw x8, 0 (x2) None
+lw x9, 4 (x2) None
+lw x18, 8 (x2) None
+addi x2, x2, 16 None
+jalr x0, 0 (x1) None

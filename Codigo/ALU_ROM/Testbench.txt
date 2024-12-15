@@ -1,0 +1,37 @@
+Toplevel MyToplevelInst0(
+    .sw(sw),
+    .enA(enA),
+    .enB(enB),
+    .enO(enO),
+    .enS(enS),
+    .clk(clk),
+    .Seg7A2(Seg7A2),  
+    .Seg7B1(Seg7B1),
+    .Seg7B2(Seg7B2),  
+    .Seg7S1(Seg7S1),
+    .Seg7S2(Seg7S2),
+    .LEDS(LEDS));
+  
+  
+  initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars;
+    clk = 0;
+    sw = 8'b11110000; /*Numero1*/
+    #15
+    clk = 1;
+    enA = 1'b1;  
+    #15
+    clk = 0;
+    #15
+    clk = 1;
+    enA = 1'b0;
+    sw = 4'b0011;  /*Numero2*/
+    #15
+    clk = 0;
+    #15
+    clk = 1;
+    enB = 1'b1;
+    #15
+    clk = 0;
+    #15
